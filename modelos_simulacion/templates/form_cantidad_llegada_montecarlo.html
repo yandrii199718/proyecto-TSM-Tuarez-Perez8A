@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+
+{%block contenido%}
+<div class="card border-primary  mb-3 ">
+  <div class="card-body">
+    <h5 class="card-title">Simulación lineas de espera montecarlo</h5>
+    <p class="card-text">El objetivo es encontrar el estado óptimo del sistema y determinar una capacidad de servicio apropiada, Minimizar el tiempo de atención y servicio a los clientes o usuarios que llegan en un determinado tiempo. Cuenta con las siguientes relaciones matemáticas:</p>
+    <p class="card-text"><small class="text-muted">Donde <b>λ</b> tasa media de llegada del sistema, <b>𝝻</b> tasa media de servicio de cada canal y <b>n</b> numero de canales </small></p>
+  </div>
+    <img src="/media/images/montecarlol.png"   width="25%" height="150px" alt="...">
+</div>
+<div class="container">
+    <div class="title text-center">
+        <h3 class="title-blue">LINEAS DE ESPERA MONTECARLO</h3>
+    </div>
+    <form action="/modelos_simulacion/lineas_espera_montecarlo/" method="POST">{% csrf_token %}
+        <input  class="btn btn-sec btn-b col-md-5 m-4"  id="cantidad" type="number"  name="cant_tiempo" placeholder="Ingrese la cantidad de tiempos de llegada" min="1" max="30" required>
+        <input class="btn btn-dark" type="submit">
+        
+        <div id="tiempos" class="btn-block ml-4"></div>
+        
+    </form>
+
+    <script>
+        document.getElementById("cantidad").addEventListener("keyup", inputsTiempos);        
+        function inputsTiempos(){
+            cantidad = parseInt(document.getElementById("cantidad").value);
+            ingreso="";
+
+            for(i=1; i <= cantidad; i++){
+                
+                ingreso += `<input  class="btn btn-sec m-4 col-md-5"  id="cantidad" type="number" step="0.01" name="tiempo_llegada" placeholder="Ingrese los tiempos entre llegadas" required>`;
+                
+            }                
+            document.getElementById("tiempos").innerHTML = ingreso;
+        }
+    </script>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+
+{% endblock %}

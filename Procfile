@@ -1,0 +1,1 @@
+web: gunicorn tecnicas_simulacion.wsgi --log-file -

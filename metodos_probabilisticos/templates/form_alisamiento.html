@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+
+{%block contenido%}
+ <div class="card border-primary  mb-3 ">
+  <div class="card-body">
+    <h5 class="card-title">Alisamiento exponencial</h5>
+    <p class="card-text">El método de suavización o alisamiento exponencial simple puede considerarse como una evolución del método de promedio móvil ponderado, en éste caso se calcula el promedio de una serie de tiempo con un mecanismo de autocorrección que busca ajustar los pronósticos en dirección opuesta a las desviaciones del pasado mediante una corrección que se ve afectada por un coeficiente de suavización. Así entonces, este modelo de pronóstico precisa tan sólo de tres tipos de datos: el pronóstico del último período, la demanda del último período y el coeficiente de suavización</p>
+    <p class="card-text"><small class="text-muted">Para el alisamiento exponencial se tiene la siguiente formula donde  <b>α</b> es la constante de suavización entre 0 y 1, <b>Xn-1</b> es el valor real de la serie y <b>Sn-1</b>es el pronostico de la serie</small></p>
+  </div>
+    <img src="/media/images/suaviza.png"   width="25%" height="140px" alt="...">
+</div>
+<div class="container">
+    <div class="title text-center">
+        <h3 class="title-blue">ALISAMIENTO EXPONENCIAL</h3>
+    </div>
+           <label value="Calcular" for="exampleFormControlInput1" class="form-label"><b>INGRESE N DE MUESTRA:</b></label>
+    <form action="/metodos_probabilisticos/AEX_valor_muestras/" method="POST">{% csrf_token %}
+        <input  class="btn btn-sec btn-b col-md-5 m-4"  type="number" name="muestra"placeholder="Ingrese la cantidad de N Muestras a Generar" required>
+        <input class="btn btn-dark"target="_blank"  type="submit">
+    </form>
+  <form method="get" action="/">
+			<input class="btn btn-dark" target="_blank" type="submit" value=Regresar>
+		</form>
+</div>
+<br>
+<br>
+<br>
+  
+{% endblock%}

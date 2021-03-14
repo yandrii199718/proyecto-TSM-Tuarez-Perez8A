@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{%block contenido%}
+  <section  class="pricing-table" id="contenido">
+
+<div class="container">
+    <div class="title text-center">
+        <h3 class="title-blue">RESULTADOS MONTECARLO</h3>
+    </div>
+    <div class="row">
+        <div class="table-responsive-sm col-md-8">
+            {{data | safe}}
+        </div>
+        <div class="col-md-1"></div>
+        <div class="table-responsive-sm col-md-3">
+            {{random | safe}}
+        </div>
+    </div>
+    
+</div>
+<form method="get" action="/">
+			 <button class="btn btn-primary btn-lg mx-auto d-block btn-no-hover" type="submit">Volver al Inicio</button> >
+		</form>
+</section>
+{% endblock%}

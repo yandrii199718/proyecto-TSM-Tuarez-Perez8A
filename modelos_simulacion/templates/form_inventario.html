@@ -1,0 +1,56 @@
+{% extends "index.html" %}
+
+
+{%block contenido%}
+<div class="card border-primary  mb-3 ">
+  <div class="card-body">
+    <h5 class="card-title">Modelo de inventario</h5>
+    <p class="card-text">Se trata en determinar con qué frecuencia y en qué cantidad se debe reabastecer el inventario de manera que se minimice la suma de los costos por unidad de tiempo: Categoría: Simbólico, Analítico, No lineal, General, Determinístico. Componentes (Modelo de un distribuidor). </p>
+  </div>
+    <img src="/media/images/inventario.png"   width="30%" height="140px" alt="...">
+</div>
+<div class="container">
+    <div class="title text-center">
+        <h3 class="title-blue">Modelo De Inventario</h3>
+    </div>
+    <form action="/modelos_simulacion/m_inventario_resultado/" method="POST">{% csrf_token %}
+        <div class="row">
+            <label value="Calcular" for="exampleFormControlInput1" class="form-label"><b>Xi:</b></label>
+
+            <input  class="btn btn-sec btn-block col-md-5 m-4"  type="number" name="numero" placeholder="Ingrese Numero De Interacciones" required>
+             <label value="Calcular" for="exampleFormControlInput1" class="form-label"><b>D:</b></label>
+          
+            <input  class="btn btn-sec btn-block col-md-5 m-4"  type="number" name="demanda" placeholder="Ingrese la Demanda" step="0.01" required>
+           
+           </div>
+           <div class="row">
+              <label value="Calcular" for="exampleFormControlInput1" class="form-label"><b>Co:</b></label>
+
+            <input  class="btn btn-sec btn-block col-md-5 m-4"  type="number" name="costoO" placeholder="Costo De Ordenar"step="0.01" required>
+               <label value="Calcular" for="exampleFormControlInput1" class="form-label"><b>Ch:</b></label>
+
+            <input  class="btn btn-sec btn-block col-md-5 m-4"  type="number" name="costoM" placeholder="Costo De Mantenimiento " step="0.01" required>
+              </div>
+               <div class="row">
+             <label value="Calcular" for="exampleFormControlInput1" class="form-label"><b>P:</b></label>
+
+            <input  class="btn btn-sec btn-block col-md-5 m-4"  type="number" name="costoP" placeholder="Costo del Producto por unidad"step="0.01" required>
+            <label value="Calcular" for="exampleFormControlInput1" class="form-label"><b>T:</b></label>
+            <input  class="btn btn-sec btn-block col-md-5 m-4"  type="number" name="Tespera" placeholder="Tiempo De Espera" step="0.01" required>
+           </div>
+                          <div class="row">
+
+         <label value="Calcular" for="exampleFormControlInput1" class="form-label"><b>D:</b></label>
+
+            <input  class="btn btn-sec btn-block col-md-5 m-4"  type="number" name="DiasAno" placeholder="Dias De Espera"step="0.01" required>
+</div>
+             <input class="btn btn-dark" type="submit">
+            
+
+    </form>
+    <form method="get" action="/">
+			<input  class="btn btn-dark" target="_blank" type="submit" value=Regresar>
+		</form>
+</div>
+
+{% endblock%}

@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+
+{%block contenido%}
+ <div class="card border-primary  mb-3 ">
+  <div class="card-body">
+    <h5 class="card-title">Método de Montecarlo</h5>
+    <p class="card-text">La simulación de Montecarlo es un método estadístico. Este es utilizado para resolver problemas matemáticos complejos a través de la generación de variables aleatorias.
+La simulación de Montecarlo, o método de Montecarlo, le debe el nombre al famoso casino del principado de Mónaco. La ruleta es el juego de casino más famoso y también el ejemplo más sencillo de mecanismo que permite generar números aleatorios.</p>
+    <p class="card-text"><small class="text-muted"> Se sabe por la ley de grandes números que un buen estimado del valor esperado de una variable continua <b>X</b> con la distribución <b>F</b> es el valor promedio de una muestra finita de variables aleatorias, independientes con distribucion <b>F</b> es decir:</small></p>
+  </div>
+    <img src="/media/images/montecarlo.png"   width="30%" height="140px" alt="...">
+</div>
+<div class="container">
+    <div class="title text-center">
+        <h3 class="title-blue">MÉTODO DE MONTECARLO</h3>
+    </div>
+    <form action="/metodos_simulacion/montecarlo_muestras/" method="POST">{% csrf_token %}
+             <label value="Calcular" for="exampleFormControlInput1" class="form-label"><b>INGRESE N DEMUESTRA:</b></label>
+
+        <input class="btn btn-sec btn-b col-md-5 m-4" type="number" name="cantidad" placeholder="Ingrese la cantidad de N Muestras a Generar" required>
+        <input  class="btn btn-dark" target="_blank"  type="submit">
+    </form>
+     <form method="get" action="/">
+			<input  class="btn btn-dark" target="_blank" type="submit" value=Regresar>
+		</form>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+
+{% endblock%}

@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{%block contenido%}
+  <section  class="pricing-table" id="contenido">
+<div class="container">
+    <div class="title text-center">
+        <h3 class="title-blue">PROMEDIO MOVIL</h3>
+    </div>
+    <form action="/metodos_probabilisticos/PM_resultado/" method="POST">{% csrf_token %}
+        <div class="row">
+        {% for i in cantidad %}
+       
+            <input class="btn btn-sec btn-b col-md-5 m-4"  type="number" step="0.01" name="valor" placeholder="Ingrese las Muestras" required >
+        
+        {% endfor %}
+        </div>
+         <button class="btn btn-dark" target="_blank" type="submit">Calcular</button>
+    </form>
+    <form method="get" action="/metodos_probabilisticos/promedio_movil/">
+			<input class="btn btn-dark" target="_blank" type=submit value=Regresar>
+		</form>
+    
+</div>
+</section>
+{% endblock %}

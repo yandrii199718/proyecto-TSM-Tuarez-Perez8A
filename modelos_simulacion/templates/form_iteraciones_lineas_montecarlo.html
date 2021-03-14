@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+
+{%block contenido%}
+  <section  class="pricing-table" id="contenido">
+
+<div class="container">
+    <div class="title text-center">
+        <h3 class="title-blue">LINEAS DE ESPERA MONTECARLO</h3>
+    </div>
+    <form action="/modelos_simulacion/LE_montecarlo/" method="POST">{% csrf_token %}
+        <input  class="btn btn-sec btn-b col-md-5 m-4"  type="number" name="iteraciones" placeholder="Ingrese Numero N Iteraciónes a Generar" required>
+        <input class="btn btn-dark" type="submit">
+    </form>   
+    <form method="get" action="/modelos_simulacion/lineas_espera_montecarlo/">
+			<input  class="btn btn-dark" target="_blank" type="submit" value=Regresar>
+		</form>
+    <br> 
+    <br> 
+    <br> 
+    <br> 
+</div>
+</section>
+{% endblock %}
+

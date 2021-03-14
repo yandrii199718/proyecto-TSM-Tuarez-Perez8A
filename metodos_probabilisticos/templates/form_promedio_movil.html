@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+
+{%block contenido%}
+
+
+<div class="card border-primary  mb-3 ">
+  <div class="card-body">
+    <h5 class="card-title">Promedio Móvil</h5>
+    <p class="card-text">Los promedios móviles son promedios calculados a partir de subgrupos artificiales de observaciones consecutivas. En las gráficas de control, usted puede crear una gráfica de promedio móvil para los datos de tiempo ponderados. En los análisis de series de tiempo, Minitab utiliza el promedio móvil para suavizar los datos y reducir las fluctuaciones aleatorias en una serie de tiempo.</p>
+    <p class="card-text"><small class="text-muted">Donde <b>Ft</b> es el pronóstico del siguiente periodo, <b>Dt</b> valor observado en el periodo <b>t</b> y<b> n </b>el número de periodos a considerar</small></p>
+  </div>
+    <img src="/media/images/descarga.png"   width="30%" height="140px" alt="...">
+</div>
+
+<div class="container">
+    <div class="title text-center" >
+        <h3 class="title-blue">Metodo promedio móvil</h3>
+    </div>
+      <label value="Calcular" for="exampleFormControlInput1" class="form-label"><b>INGRESE N DEMUESTRA:</b></label>
+    <form  action="/metodos_probabilisticos/PM_valor_muestras/" method="POST">{% csrf_token %}
+    <input class="btn btn-sec btn-b col-md-5 m-4"  type="number" name="muestra"placeholder="Ingrese la cantidad de N muestra a generar" required>
+     <input class="btn btn-dark" target="_blank"  type=submit value=Enviar>
+    </form>
+   <form method="get" action="/">
+			<input class="btn btn-dark" target="_blank" type=submit value=Regresar>
+		</form>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+ 
+
+
+    
+{% endblock%}

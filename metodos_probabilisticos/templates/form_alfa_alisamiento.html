@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{%block contenido%}
+<section  class="pricing-table" id="contenido">
+
+<div class="container">
+    <div class="title text-center">
+        <h3 class="title-blue">ALISAMIENTO EXPONENCIAL</h3>
+    </div>
+               <label value="Calcular" for="exampleFormControlInput1" class="form-label">INGRESE VALOR DOMINIO:</label>
+
+    <form action="/metodos_probabilisticos/AEX_resultado/" method="POST">{% csrf_token %}
+        <input class="btn btn-sec btn-b col-md-5 m-4"   type="number" step="0.01" name="dominio" placeholder="Ingrese el Dominio" min="0" max="1" required>
+        <input class="btn btn-dark" type="submit">
+    </form>
+    <form method="get" action="/metodos_probabilisticos/alisamiento_exp/">
+			<input class="btn btn-dark" target="_blank" type="submit" value=Regresar>
+		</form>
+        <br>
+    <br>
+    <br>
+    {{valores}}
+   <br>
+
+</div>
+</section>
+{% endblock %}

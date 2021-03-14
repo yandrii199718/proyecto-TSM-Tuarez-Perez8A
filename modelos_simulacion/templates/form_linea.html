@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+
+
+{%block contenido%}
+<div class="card border-primary  mb-3 ">
+  <div class="card-body">
+    <h5 class="card-title">Simulación lineas de espera</h5>
+    <p class="card-text">Una línea de espera es el efecto resultante en un sistema cuando la demanda de un servicio supera la capacidad de proporcionar dicho servicio. Este sistema está formado por un conjunto de entidades en paralelo que proporcionan un servicio a las transacciones que  aleatoriamente entran al sistema. Dependiendo del sistema que se trate, las entidades  pueden ser cajeras, máquinas, semáforos, grúas, etcétera, mientras que las transacciones pueden ser: clientes, piezas, autos, barcos, etcétera.</p>
+    <p class="card-text"><small class="text-muted">Donde <b>λ</b> tasa media de llegada del sistema, <b>𝝻</b> tasa media de servicio de cada canal y <b>n</b> numero de canales </small></p>
+  </div>
+    <img src="/media/images/lineae.png"   width="25%" height="150px" alt="...">
+</div>
+
+<div class="container">
+    <div class="title text-center">
+        <h3 class="title-blue">SIMULACIÓN LINEAS DE ESPERA</h3>
+    </div>
+    <form action="/modelos_simulacion/ls_resultado/" method="POST">{% csrf_token %}
+        <div class="row">
+              <label value="Calcular" for="exampleFormControlInput1" class="form-label"><b>N:</b></label>
+
+            <input  class="btn btn-sec btn-block col-md-5 m-4"  type="number" name="numero" placeholder="Ingrese Numero N Iteraciónes a Generar" required>
+          <label value="Calcular" for="exampleFormControlInput1" class="form-label"><b>λ:</b></label>
+
+            <input  class="btn btn-sec btn-block col-md-5 m-4"  type="number" name="landa" placeholder="Ingrese Landa" step="0.01" required>     
+            </div>
+          <div class="row">
+
+            <label value="Calcular" for="exampleFormControlInput1" class="form-label"><b>𝝻:</b></label>                 
+
+            <input  class="btn btn-sec btn-block col-md-5 m-4"  type="number" name="nu" placeholder="Ingrese Nu"step="0.01" required>
+            </div>
+                          <input class="btn btn-dark" type="submit">
+
+        
+       
+    </form>
+    <form method="get" action="/">
+			<input class="btn btn-dark " target="_blank" type="submit" value=Regresar>
+		</form>
+</div>
+{% endblock%}

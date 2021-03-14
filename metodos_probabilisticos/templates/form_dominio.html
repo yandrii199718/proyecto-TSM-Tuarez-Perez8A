@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{%block contenido%}
+<div class="container">
+    <div class="title text-center">
+        <h1 class="title-blue">PROMEDIO MOVIL</h1>
+    </div>
+    <form action="/metodos_probabilisticos/PM_resultado/" method="POST">{% csrf_token %}
+        <input  class="btn btn-sec btn-block m-4"  type="number" name="dominio" placeholder="Ingrese el Dominio" min="3" max="4" required>
+        <input type="hidden" name="valor" value="{{valores}}">
+        <input class="btn btn-dark" type="submit">
+    </form>
+    {{valores}}
+    
+</div>
+
+{% endblock %}

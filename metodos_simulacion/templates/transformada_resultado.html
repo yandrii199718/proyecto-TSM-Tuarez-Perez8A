@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+{%block contenido%}
+<div class="container">
+    <div class="title text-center">
+        <h3 class="title-blue">RESULTADOS MONTECARLO</h3>
+    </div>
+    <div class="row">
+        <div class="table-responsive-sm w-100">
+            {{data | safe}}
+        </div>
+    </div>
+            <center><h4 class="title-blue">GRÁFICA RESULTANTE</h4></center>
+    <img class="mx-auto d-block w-100" src="/metodos_simulacion/transformada_inversa/grafica/" height="600px"/>       
+</div>
+<form method="get" action="/">
+			 <button class="btn btn-primary btn-lg mx-auto d-block btn-no-hover" type="submit">Volver al Inicio</button> >
+		</form>
+{% endblock%}

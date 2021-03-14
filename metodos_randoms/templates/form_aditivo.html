@@ -1,0 +1,48 @@
+{% extends "index.html" %}
+
+
+{%block contenido%}
+<div class="card border-primary  mb-3 ">
+  <div class="card-body">
+    <h5 class="card-title">Métodod congruencial aditivo</h5>
+    <p class="card-text">Calcula una sucesión de números pseudoaleatorios mediante la relación <b>Xn+1= Xn +Xn-k (mod M).</b> 
+Para usar este método se necesitan k valores iniciales, siendo <b>k</b> entero. Las propiedades estadísticas de la secuencia tienden a mejorarse a medida que k se incrementa. Este es el único método que produce periodos mayores que <b>M</b>.
+su ecuación es:</p>
+  </div>
+    <img src="/media/images/aditivo.png"   width="30%" height="140px" alt="...">
+</div>
+<div class="container">
+    <div class="title text-center">
+        <h3 class="title-blue">METODO CONGRUENCIAL ADITIVO </h3>
+    </div>
+    <form action="/metodos_randoms/aditivo_resultado/" method="POST">{% csrf_token %}
+        <div class="row">
+            <label value="Calcular" for="exampleFormControlInput1" class="form-label"><b>n</b></label>
+            
+            <input  class="btn btn-sec btn-block col-md-5 m-4"  type="number" name="numero" placeholder="Ingrese N Datos" required>
+            <label value="Calcular" for="exampleFormControlInput1" class="form-label"><b>x</b></label>
+
+        <input  class="btn btn-sec btn-block col-md-5 m-4"  type="number" name="semilla" placeholder="Ingrese la semilla" required>
+               </div>
+                <div class="row">
+
+         <label value="Calcular" for="exampleFormControlInput1" class="form-label"><b>a</b></label>
+
+            
+            <input  class="btn btn-sec btn-block col-md-5 m-4"  type="number" name="multiplicador" placeholder="Ingrese el Multiplicador" required>
+          <label value="Calcular" for="exampleFormControlInput1" class="form-label"><b>c</b></label>
+             
+        <input  class="btn btn-sec btn-block col-md-5 m-4"  type="number" name="incremento" placeholder="Ingrese el Incremento" required>
+            </div>
+            <div class="row">
+            <label value="Calcular" for="exampleFormControlInput1" class="form-label"><b>m</b></label>
+            <input  class="btn btn-sec btn-block col-md-5 m-4"  type="number" name="modulo" placeholder="Ingrese el Modulo" required>
+        </div>
+          <input class="btn btn-dark" target="_blank"  type="submit">      
+        
+    </form>
+    <form method="get" action="/">
+			<input class="btn btn-dark" target="_blank" type="submit" value=Regresar>
+		</form>
+</div>
+{% endblock%}

@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{%block contenido%}
+<section  class="pricing-table" id="contenido">
+<div class="container">
+    <div class="title text-center">
+        <h3 class="title-blue">RESULTADO METODO PROMEDIO MOVIL</h3>
+    </div>
+    <div  class="table table-bordered">
+        {{data | safe}}
+    </div>
+    <center> <h4 class="title-blue">GRÁFICA RESULTANTE</h4></center>
+    <img class="mx-auto d-block" src="/metodos_probabilisticos/PM_resultado/grafico/"  width="600px" /> 
+    <form method="get" action="/">
+			 <button class="btn btn-primary btn-lg mx-auto d-block btn-no-hover" type="submit">Volver al Inicio</button> >
+		</form>
+        </section>
+        
+</div>
+
+{% endblock%}
+
+
+
+

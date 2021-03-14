@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+
+{%block contenido%}
+<div class="card border-primary  mb-3 ">
+  <div class="card-body">
+    <h5 class="card-title">Regresión Lineal</h5>
+    <p class="card-text">Los promedios móviles son promedios calculados a partir de subgrupos artificiales de observaciones consecutivas. En las gráficas de control, usted puede crear una gráfica de promedio móvil para los datos de tiempo ponderados. En los análisis de series de tiempo, Minitab utiliza el promedio móvil para suavizar los datos y reducir las fluctuaciones aleatorias en una serie de tiempo.</p>
+    <p class="card-text"><small class="text-muted">Su expresión general se basa en la ecuación de una recta <b>y = mx + b</b> Donde <b>m</b> es la pendiente y <b>b</b> el punto de corte y vienen expresadas de la siguiente manera: </small></p>
+  </div>
+    <img src="/media/images/regresion.png"   width="25%" height="140px" alt="...">
+</div>
+
+<div class="container">
+    <div class="title text-center">
+        <h3 class="title-blue">REGRESIÓN LINEAL</h3>
+    </div>
+    <form action="/metodos_regresion/RL_muestras/" method="POST">{% csrf_token %}
+        <input  class="btn btn-sec btn-b col-md-5 m-4"  type="number" name="cantidad" placeholder="Ingrese la cantidad de N Muestras a Generar" required>
+        <input class="btn btn-dark" type="submit">
+    </form>
+    <form method="get" action="/">
+			<input class="btn btn-dark " target="_blank" type="submit" value=Regresar>
+		</form>
+    <br>
+     <br>
+      <br>
+       <br>
+</div>
+{% endblock%}

@@ -1,0 +1,36 @@
+
+{% extends "index.html" %}
+
+
+{%block contenido%}
+ <div class="card border-primary  mb-3 ">
+  <div class="card-body">
+    <h5 class="card-title">Métodod de transformada inversa</h5>
+   
+    <p class="card-text">El método de la transformada (o transformación) inversa, también conocido como método de la transformada integral de probabilidad inversa, es un método para la generación de números aleatorios de cualquier distribución de probabilidad continua cuando se conoce la inversa de su función de distribución <b>(cdf)</b>. </p>
+        <p class="card-text"><small class="text-muted"> función acumulada <b>f(x)</b> y la generación de números pseudoaleatorios  <b>ri ~U (0,1)</b>. </small></p>
+ 
+  </div>
+    <img src="/media/images/transformada.png"   width="30%" height="140px" alt="...">
+</div>
+
+<div class="container">
+    <div class="title text-center">
+        <h3 class="title-blue">METODO DE TRANSFORMADA INVERSA</h3>
+    </div>
+    <form action="/metodos_simulacion/transformada_inversa/" method="POST">{% csrf_token %}
+   <label value="Calcular" for="exampleFormControlInput1" class="form-label"><b>λ:</b></label>
+
+        <input  class="btn btn-sec btn-b col-md-5 m-4"  type="number" name="lambd" placeholder="Ingrese lambda" required>
+        <input class="btn btn-dark" type="submit">
+    </form>
+    <form method="get" action="/">
+			<input class="btn btn-dark " target="_blank" type="submit" value=Regresar>
+		</form>
+        <br>
+         <br>
+               <br>
+         <br>
+</div>
+
+{% endblock%}

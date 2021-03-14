@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+{%block contenido%}
+  <section  class="pricing-table" id="contenido">
+
+<div class="container">
+    <div class="title text-center">
+        <h3 class="title-blue">RESULTADOS ANALITICOS</h3>
+    </div>
+    <div class="table-responsive-sm">
+        {{calculos | safe}}
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="title text-center mt-5 mb-5">
+        <h3 class="title-blue">RESULTADOS SIMULACIÓN</h3>
+    </div>
+    <div class="table-responsive-sm">
+        {{data | safe}}
+    </div>
+                        <center><h4 class="title-blue">GRÁFICA RESULTANTE</h4></center>
+
+        <img class="mx-auto d-block" src="/modelos_simulacion/ls_resultado/grafica"  width="600px" />       
+</div>
+<form method="get" action="/">
+			 <button class="btn btn-primary btn-lg mx-auto d-block btn-no-hover" type="submit">Volver al Inicio</button> >
+	</form>	
+</section>
+{% endblock%}

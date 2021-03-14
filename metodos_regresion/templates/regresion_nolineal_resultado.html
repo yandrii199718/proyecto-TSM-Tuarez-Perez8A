@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{%block contenido%}
+  <section  class="pricing-table" id="contenido">
+
+<div class="container">
+    <div class="title text-center">
+        <h3 class="title-blue">RESULTADOS REGRESIÓN NO LINEAL</h3>
+    </div>
+    
+    <div class="text-center">
+        <p><strong>P0</strong>= {{p0}}</p>
+        <p><strong>P1</strong>= {{p1}}</p>
+        <p><strong>P2</strong>= {{p2}}</p>
+    </div>
+
+    <div class="table-responsive-sm">
+        {{data | safe}}
+    </div>
+                    <center><h4 class="title-blue">GRÁFICA RESULTANTE</h4></center>
+
+    <img class="mx-auto d-block" src="/metodos_regresion/RNL_grafico/"  width="600px" /> 
+    
+</div>
+<form method="get" action="/">
+			 <button class="btn btn-primary btn-lg mx-auto d-block btn-no-hover" type="submit">Volver al Inicio</button> >
+	</form>	
+</section>
+{% endblock%}

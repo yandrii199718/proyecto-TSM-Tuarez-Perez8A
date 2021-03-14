@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+
+{%block contenido%}
+  <section  class="pricing-table" id="contenido">
+
+<div class="container">
+    <div class="title text-center">
+        <h3 class="title-blue">LINEAS DE ESPERA MONTECARLO</h3>
+    </div>
+    <form action="/modelos_simulacion/lineas_espera_montecarlo_servicio/" method="POST">{% csrf_token %}
+        <input  class="btn btn-sec btn-b col-md-5 m-4"  id="cantidad" type="number"  name="cant_servicio" placeholder="Ingrese la cantidad de tiempos de servicio" min="1" max="30" required>
+        <input class="btn btn-dark" type="submit">
+        <div id="tiempos" class="btn-block"></div>
+    </form>
+
+    <script>
+        document.getElementById("cantidad").addEventListener("keyup", inputsTiempos);        
+        function inputsTiempos(){
+            cantidad = parseInt(document.getElementById("cantidad").value);
+            ingreso="";
+
+            for(i=0; i < cantidad; i++){
+                ingreso += `<input  class="btn btn-sec m-4 col-md-5" id="cantidad" type="number" step="0.01" name="tiempo_servicio" placeholder="Ingrese los tiempos de servicio" required>`;
+            }                
+            document.getElementById("tiempos").innerHTML = ingreso;
+        }
+    </script>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+</section>
+{% endblock %}

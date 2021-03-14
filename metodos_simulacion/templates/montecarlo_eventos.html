@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+
+{%block contenido%}
+  <section  class="pricing-table" id="contenido">
+
+<div class="container">
+    <div class="title text-center">
+        <h3 class="title-blue">MÉTODO DE MONTECARLO</h3>
+    </div>
+    <form action="/metodos_simulacion/montecarlo_resultado/" method="POST">{% csrf_token %}
+        <input  class="btn btn-sec btn-b col-md-5 m-4"  type="number" name="cantidad_eventos" placeholder="Ingrese la cantidad de eventos aleatorios" required>
+        <input class="btn btn-dark " type="submit">
+    </form>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+</section>
+{% endblock%}
